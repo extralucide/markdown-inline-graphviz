@@ -16,12 +16,32 @@ directory.
 
 # Usage
 
-Activate the `inline_graphviz` extension. For example, with Mkdocs, you add a
-stanza to mkdocs.yml:
+Activate the `inline_graphviz` extension. 
+
+For example, with Mkdocs, you add astanza to mkdocs.yml:
 
 ```
 markdown_extensions:
     - inline_graphviz
+```
+For [Python-Markdown](https://github.com/Python-Markdown/markdown) API
+
+```python
+import markdown
+from mdx_inline_graphviz import InlineGraphvizExtension
+
+options = {
+    'input': input_file,
+    'output': None,
+    'extensions': ["markdown.extensions.tables",
+                   "markdown.extensions.footnotes",
+                   "mdx_inline_graphviz"],
+    'extension_configs': {},
+    'encoding': None,
+    'output_format': "xhtml1",
+    'lazy_ol': True
+}
+markdown.markdownFromFile(**options)
 ```
 
 To use it in your Markdown doc:
